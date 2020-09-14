@@ -7,6 +7,9 @@ var bodyParser = require('body-parser')
 
 var app = express();
 
+
+
+const port = process.env.PORT || 4002;
 //CORS
 
 app.use(function(req, res, next) {
@@ -58,6 +61,12 @@ app.use('/', appRoutes);
 
 //ESCUCHAR PETICIONES
 
+/*
 app.listen(3002, () => {
     console.log('Express server puerto 3002: \x1b[32m%s\x1b[0m', 'online');
+});
+*/
+
+app.listen(port, '0.0.0.0' ,  () => {
+    console.log(`EL SERVIDOR ESTA ESCUCHANDO POR EL PUERTO ${port}`);
 });
